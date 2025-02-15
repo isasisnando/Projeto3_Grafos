@@ -1,4 +1,4 @@
-<p align="center">Coloração de Grafos - Projeto 3</p>
+<h1 align="center">Coloração de Grafos - Projeto 3</h1>
 
 <ul>
     <li><a href="#-autores">💻 Autores</a>
