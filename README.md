@@ -45,8 +45,11 @@ python main.py
 ---
 
 ## Resultados
+Modelando o grafo como explicado acima, obtivemos o seguinte modelo:
+<img  alt="graph" src= "./readme_utils/grafo_sem_coloração.png">
 
-<img  alt="graph" src= "./readme_utils/grafo_com_coloração.png">
+
+Após rodar o algoritmo de coloração, que tem as especificações 
 ---
 <h2> Funcionalidades</h2>
 
