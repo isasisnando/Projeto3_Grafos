@@ -10,7 +10,7 @@ class Vertex:
         self.color = None
 
 class Graph:
-    def __init__(self):
+    def __init__(self) -> None:
         self.nodes = list[Vertex]()
         self.nodes_by_order = list[Vertex]()
         self.visual_graph = nx.Graph()
@@ -42,6 +42,9 @@ class Graph:
         ]
         self.rounds = [list() for _ in range(14)]
 
+    # Método responsável por desenhar o grafo e aplicar as respectivas cores de acordo
+    # com a rodada que a partida irá ocorrer.
+    # Para apresentá-lo graficamente, utilizamos networkx e matplotlib
     def draw_graph(self):
         colors = [None] * (len(self.nodes) )
 
@@ -57,10 +60,11 @@ class Graph:
         nx.draw(self.visual_graph, pos, with_labels=True, node_color=colors[0:], edge_color = "black", node_size = 200, font_size = 12)
         plt.show()
 
-        
-
-
-    def build(self):
+    # Construo o grafo, aplicando as restições necessárias para cada
+    # vértice a partir das especificações do problema.
+    # Vértices numerados de 0 a 13 representam as 14 rodadas do torneio.
+    # Vértices numerados de 14 a 55 representam as partidas do torneio.
+    def build(self) -> None:
         for i in range(14):
             self.nodes.append(Vertex(id = i))
 
@@ -80,7 +84,8 @@ class Graph:
 
         self.nodes_by_order = sorted_by_id
 
-    def setRestrictions(self):
+    # Aplico as regras de restrição definidas pelo problema
+    def setRestrictions(self) -> None:
         for(i) in range(14):
             for j in range(14):
                 if(i==j):
@@ -89,6 +94,7 @@ class Graph:
 
         for i in range(len(self.nodes)):
 
+            # Partidas que não podem ocorrer em rodadas específicas
             if((self.nodes[i].homeTeam, self.nodes[i].guestTeam) == ("DFC", "CFC")):
                 self.addRestriction([i], [0, 13])
             if((self.nodes[i].homeTeam, self.nodes[i].guestTeam) == ("LFC", "FFC")):
@@ -100,12 +106,14 @@ class Graph:
             if((self.nodes[i].homeTeam, self.nodes[i].guestTeam) == ("CFC", "TFC")):
                 self.addRestriction([i], [1, 2])
 
+            #Paridas cujos mandantes não podem ser os mesmos na mesma rodada
             for j in range(i+1, len(self.nodes)):
                 if((self.nodes[i].homeTeam, self.nodes[j].homeTeam) == ("TFC", "OFC")):
                     self.addRestriction([i], [j])
                 if((self.nodes[i].homeTeam, self.nodes[j].homeTeam) == ("AFC", "FFC")):
                     self.addRestriction([i], [j])
 
+            # Restrição adicional de um time não poder jogar mais de uma vez na mesma rodada
             for j in range(i+1, len(self.nodes)):
                 if(
                     self.nodes[i].homeTeam in [self.nodes[j].homeTeam, self.nodes[j].guestTeam] or 
@@ -113,21 +121,25 @@ class Graph:
                 ):
                     self.addRestriction([i], [j])
 
-    def addRestriction(self, _from: list[int], _to: list[int]):
+    def addRestriction(self, _from: list[int], _to: list[int]) -> None:
         for i in _from:
             for j in _to:
                 self.nodes[i].neighbors.append(j)
                 self.nodes[j].neighbors.append(i)
                 self.visual_graph.add_edge(i, j)
     
-    def canColor(self, vertex: Vertex, color: int):
+    # Verifico se posso aplicar uma certa cor em um vétice no processo de coloração
+    def canColor(self, vertex: Vertex, color: int) -> bool: 
         for nbr in vertex.neighbors:
             if(self.nodes[nbr].color == color):
                 return False
         return True
 
-
-    def coloring(self, index):
+    # Realizo a coloração por meio de backtracking
+    # Complexidade de Tempo = O(m^v)
+    # m: número de cores disponíveis (14 no caso)
+    # v: número de vértices 
+    def coloring(self, index: int) -> bool:
         if (index== len(self.nodes)):
             return True
         
@@ -140,8 +152,7 @@ class Graph:
 
         return False 
                 
-
-    def solve(self):
+    def solve(self) -> None:
         self.build()
         self.draw_graph()
         self.coloring(0)
@@ -155,7 +166,7 @@ class Graph:
             for match in self.rounds[i]:
                 print(f"{self.teams[match.homeTeam]} x {self.teams[match.guestTeam] : <38}      | Game ID: {match.id}")
             print()    
-
+        print(len(self.nodes))
         self.draw_graph()
 
 graph = Graph()
