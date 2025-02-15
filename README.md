@@ -43,6 +43,16 @@ python main.py
 </p>
 
 ---
+<h2>Solução</h2>
+
+<p>
+   O campeonato foi modelado em um grafo, onde os vértices representam as rodadas e as partidas , e as arestas representam uma proibição, ou seja, os dois eventos indicados pelos vértices conectados por uma aresta não podem ocorrer simultaneamente. Assim, adicionaremos as seguintes arestas:
+    - Entre todas as rodadas, pois uma rodada não pode ocorrer juntamente com outra.
+    - Entre duas partidas que compartilham algum time em comum, pois cada time participa de uma partida por vez.
+    - Entre os vértices que representam as restrições dadas no enunciado do problema, por exemplo adiciona-se uma aresta entre as rodadas 1 e 14 e o jogo (DFC,CFC).
+    A partir do grafo modelado, iremos realizar uma coloração, onde cada cor representará uma rodada. Dois vértices conectados por uma aresta não ocorrem numa mesma rodada. Para realizar essa coloração foi utilizado um algoritmo recursivo com backtracking, descrito abaixo: 
+    
+</p>
 
 ## Resultados
 
