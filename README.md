@@ -42,7 +42,14 @@ python main.py
 </p>
 
 ---
+
+## Resultados
+
+<img  alt="graph" src= "./readme_utils/grafo_com_coloração.png">
+---
 <h2> Funcionalidades</h2>
 
 <p></p>
+
+
 
