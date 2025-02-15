@@ -9,7 +9,7 @@
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/isasisnando" target="_blank"><img style="border-radius: 50%;" src="https://github.com/isasisnando.png" width="100px;" alt="Isabela Souza"/><br /><sub><b>Isa Souza</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/isasisnando" target="_blank"><img style="border-radius: 50%;" src="https://github.com/isasisnando.png" width="100px;" alt="Isabela Souza"/><br /><sub><b>Isa Souza - 231018884</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/lucasdbr05" target="_blank"><img style="border-radius: 50%;" src="https://github.com/lucasdbr05.png" width="100px;" alt="Lucas Lima"/><br /><sub><b>Lucas Lima - 231003406</b></sub></a><br /></td>
 </table>
 
