@@ -14,7 +14,16 @@ class Graph:
         self.nodes = list[Vertex]()
         self.nodes_by_order = list[Vertex]()
         self.visual_graph = nx.Graph()
-        self.teams = ["DFC", "TFC", "AFC", "LFC", "FFC", "OFC", "CFC"]
+        self.teams = {
+            "DFC": "Dragões", 
+            "TFC": "Tubarões", 
+            "AFC": "Águias", 
+            "LFC": "Leões", 
+            "FFC": "Falcões", 
+            "OFC": "Orcas", 
+            "CFC": "Crocodilos"
+            }
+        
         self.total_colors = [
             "red",
             "blue",
@@ -132,9 +141,6 @@ class Graph:
         return False 
                 
 
-
-        
-
     def solve(self):
         self.build()
         self.draw_graph()
@@ -147,7 +153,7 @@ class Graph:
         for (i) in range(14):
             print(f"Round {i+1}   -----    Color: {self.total_colors[i]}")
             for match in self.rounds[i]:
-                print(f"{match.homeTeam} x {match.guestTeam}")
+                print(f"{self.teams[match.homeTeam]} x {self.teams[match.guestTeam] : <38}      | Game ID: {match.id}")
             print()    
 
         self.draw_graph()
