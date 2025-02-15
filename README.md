@@ -38,6 +38,7 @@ python main.py
 
 <p>
     O projeto consiste em montar um sequência de 14 rodadas de jogos de futebol (com dois turnos com mandos diferentes) em um campeonato onde 7 times competem. Além disso, sabe-se que um time só joga uma partida por rodada e são dadas algumas restrições adicionais descritas abaixo:
+    <img  alt="graph" src= "./readme_utils/restricoes.png">
     Para resolver o problema, o campeonato será modelado como um grafo e a sequência será definida com base em um algoritmo de coloração em grafos.
 </p>
 
