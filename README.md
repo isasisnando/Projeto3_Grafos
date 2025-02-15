@@ -1,11 +1,6 @@
 <h1 align="center">Coloração de Grafos - Projeto 3</h1>
 
-<ul>
-    <li><a href="#-autores">💻 Autores</a>
-    <li><a href="#-sobre-o-projeto">💬 Sobre o projeto</a></li>
-    <li><a href="#-tecnologias">🛠 Tecnologias</a></li>
-    <li><a href="#-funcionalidades"> Funcionalidades</a></li>
-</ul>
+
 
 ---
 
@@ -172,11 +167,9 @@ Leões x Águias                                      | Game ID: 34
 Orcas x Crocodilos                                  | Game ID: 49
 
 ```
+<img  alt="graph" src= "./readme_utils/grafo_com_coloração.png">
 
----
-<h2> Funcionalidades</h2>
 
-<p></p>
 
 
 
