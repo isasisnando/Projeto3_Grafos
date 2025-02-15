@@ -61,10 +61,39 @@ python main.py
 </ul>
 <p>
     A partir do grafo modelado, iremos realizar uma coloração, onde cada cor representará uma rodada. Dois vértices conectados por uma aresta não ocorrem numa mesma rodada. Para realizar essa coloração foi utilizado um algoritmo recursivo com backtracking, descrito abaixo: 
-    
 </p>
 
-## Resultados
+### Colaração
+<p>
+    Tendo o grafo modelado e montado, para realizar a coloração, utilizamos um algoritmo de coloração por meio de backtracking. Nesse algoritmo, inicializamos por um nó qualquer (por conveniência, o de menor índice), e vamos seguindo o seguinte processo: 
+</p>
+
+<ul>
+    <li>
+        Ao chegar em um vértice de id =  x, iteramos por todas as c cores disponíveis:
+        <ul>
+            <li> Se nenhum adjacente a x possui a cor c, realizamos o mesmo passo recursivamente para o vértice de id x+1, e definimos temporariamente que sua cor será c;
+            </li>
+            <li>
+                Caso o retorno dessa recursão seja verdadeiro, mantemos a cor que escolhemos e retorna-se verdadeiro;
+            </li>
+            <li>
+                Caso contrário, retira-se a cor c de x e permite que ele seja pintado de outra cor;
+            </li>
+        </ul>
+    </li>
+    <li>
+        A base dessa recursão é se o id for igual ao número de vértices do grafo, retornando verdadeiro caso isso ocorra
+    </li>
+</ul>
+
+<p>O algoritmo possui complexidade igual a O(m^v), sendo:</p>
+<ul>
+    <li>m: número de cores disponíveis - no caso do problema, cada rodada representa uma cor, então temos 14 cores</li>
+    <li>v: número de vértices do grafo </li>
+</ul>
+
+# Resultados
 Modelando o grafo como explicado acima, obtivemos o seguinte modelo:
 <img  alt="graph" src= "./readme_utils/grafo_sem_coloração.png">
 
@@ -141,7 +170,6 @@ Round 14   -----    Color: maroon
 Dragões x Falcões                                     | Game ID: 17
 Leões x Águias                                      | Game ID: 34
 Orcas x Crocodilos                                  | Game ID: 49
-
 
 ```
 

@@ -166,7 +166,6 @@ class Graph:
             for match in self.rounds[i]:
                 print(f"{self.teams[match.homeTeam]} x {self.teams[match.guestTeam] : <38}      | Game ID: {match.id}")
             print()    
-        print(len(self.nodes))
         self.draw_graph()
 
 graph = Graph()
