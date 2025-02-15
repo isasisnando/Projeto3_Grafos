@@ -58,7 +58,7 @@ python main.py
     A partir do grafo modelado, iremos realizar uma coloração, onde cada cor representará uma rodada. Dois vértices conectados por uma aresta não ocorrem numa mesma rodada. Para realizar essa coloração foi utilizado um algoritmo recursivo com backtracking, descrito abaixo: 
 </p>
 
-### Colaração
+### Coloração
 <p>
     Tendo o grafo modelado e montado, para realizar a coloração, utilizamos um algoritmo de coloração por meio de backtracking. Nesse algoritmo, inicializamos por um nó qualquer (por conveniência, o de menor índice), e vamos seguindo o seguinte processo: 
 </p>
@@ -89,7 +89,7 @@ python main.py
 </ul>
 
 # Resultados
-Modelando o grafo como explicado acima, obtivemos o seguinte modelo:
+Modelando o grafo como explicado acima, obtivemos o seguinte modelo, onde os vértices de 0 a 13 representam as rodadas e os vértices de 14 a 55 representam os jogos:
 <img  alt="graph" src= "./readme_utils/grafo_sem_coloração.png">
 
 
