@@ -148,8 +148,7 @@ class Graph:
             print(f"Round {i+1}   -----    Color: {self.total_colors[i]}")
             for match in self.rounds[i]:
                 print(f"{match.homeTeam} x {match.guestTeam}")
-            print()
-    
+            print()    
 
         self.draw_graph()
 
